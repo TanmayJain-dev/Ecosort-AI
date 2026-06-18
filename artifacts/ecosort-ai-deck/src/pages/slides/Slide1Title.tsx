@@ -21,7 +21,6 @@ export default function Slide1Title() {
           zIndex: 0,
         }}
       />
-
       {/* Gradient overlay — left visible, right dark */}
       <div
         style={{
@@ -35,7 +34,6 @@ export default function Slide1Title() {
           zIndex: 1,
         }}
       />
-
       {/* Right content panel */}
       <div
         style={{
@@ -151,9 +149,7 @@ export default function Slide1Title() {
               fontStyle: "italic",
               color: "#5A8A5A",
             }}
-          >
-            [My Name]
-          </div>
+          >Tanmay Jain</div>
           <div
             style={{
               fontFamily: "'DM Sans', sans-serif",
