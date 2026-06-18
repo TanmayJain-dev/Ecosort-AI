@@ -1,0 +1,31 @@
+kind = "slides"
+previewPath = "/ecosort-ai-deck/"
+title = "EcoSort AI Deck"
+version = "1.0.0"
+id = "artifacts/ecosort-ai-deck"
+router = "path"
+
+[[integratedSkills]]
+name = "slides"
+version = "1.0.0"
+
+[[services]]
+name = "web"
+paths = [ "/ecosort-ai-deck/" ]
+localPort = 25779
+
+[services.development]
+run = "pnpm --filter @workspace/ecosort-ai-deck run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/ecosort-ai-deck", "run", "build" ]
+publicDir = "artifacts/ecosort-ai-deck/dist/public"
+serve = "static"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "25779"
+BASE_PATH = "/ecosort-ai-deck/"

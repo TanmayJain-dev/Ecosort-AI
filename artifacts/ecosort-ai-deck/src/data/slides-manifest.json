@@ -1,0 +1,66 @@
+[
+  {
+    "id": "a1b2c3d4-e5f6-7890-abcd-ef1234567801",
+    "position": 1,
+    "filepath": "src/pages/slides/Slide1Title.tsx",
+    "title": "Title Slide",
+    "description": "EcoSort AI — Smart Waste Guide. IBM SkillsBuild AI Internship.",
+    "speakerNotes": ""
+  },
+  {
+    "id": "a1b2c3d4-e5f6-7890-abcd-ef1234567802",
+    "position": 2,
+    "filepath": "src/pages/slides/Slide2Problem.tsx",
+    "title": "Problem Statement & SDG Alignment",
+    "description": "SDG 12 focus: wishcycling, landfill contamination, toxic e-waste leaks.",
+    "speakerNotes": ""
+  },
+  {
+    "id": "a1b2c3d4-e5f6-7890-abcd-ef1234567803",
+    "position": 3,
+    "filepath": "src/pages/slides/Slide3Solution.tsx",
+    "title": "AI Solution Overview & Target Users",
+    "description": "Prompt-workflow prototype for smart waste segregation. Students, households, communities.",
+    "speakerNotes": ""
+  },
+  {
+    "id": "a1b2c3d4-e5f6-7890-abcd-ef1234567804",
+    "position": 4,
+    "filepath": "src/pages/slides/Slide4Workflow.tsx",
+    "title": "The AI Workflow (How it Works)",
+    "description": "User inputs item → keyword-matching AI → category + safe-handling instructions (5 groups).",
+    "speakerNotes": ""
+  },
+  {
+    "id": "a1b2c3d4-e5f6-7890-abcd-ef1234567805",
+    "position": 5,
+    "filepath": "src/pages/slides/Slide5Demo.tsx",
+    "title": "Prototype Demo",
+    "description": "Placeholder layout for Replit web app screenshots.",
+    "speakerNotes": ""
+  },
+  {
+    "id": "a1b2c3d4-e5f6-7890-abcd-ef1234567806",
+    "position": 6,
+    "filepath": "src/pages/slides/Slide6Tools.tsx",
+    "title": "AI Tools Used",
+    "description": "IBM BOB for ideation; Replit for frontend visual prototype. IBM BOB screenshot placeholder.",
+    "speakerNotes": ""
+  },
+  {
+    "id": "a1b2c3d4-e5f6-7890-abcd-ef1234567807",
+    "position": 7,
+    "filepath": "src/pages/slides/Slide7ResponsibleAI.tsx",
+    "title": "Responsible AI Considerations",
+    "description": "Fairness, Transparency, Privacy — verbatim from the internship brief.",
+    "speakerNotes": ""
+  },
+  {
+    "id": "a1b2c3d4-e5f6-7890-abcd-ef1234567808",
+    "position": 8,
+    "filepath": "src/pages/slides/Slide8Impact.tsx",
+    "title": "Expected Impact",
+    "description": "Environmental: reduced GHGs, prevented toxic leaks. Social: community education.",
+    "speakerNotes": ""
+  }
+]
