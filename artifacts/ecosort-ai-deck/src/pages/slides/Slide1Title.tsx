@@ -159,9 +159,7 @@ export default function Slide1Title() {
               opacity: 0.45,
               letterSpacing: "0.05vw",
             }}
-          >
-            [My College]
-          </div>
+          >Maharaja Agrasen Institute of Technology, Delhi</div>
         </div>
       </div>
     </div>
