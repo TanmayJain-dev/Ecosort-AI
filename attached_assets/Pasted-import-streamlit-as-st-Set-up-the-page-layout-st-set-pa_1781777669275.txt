@@ -1,0 +1,65 @@
+import streamlit as st
+
+# Set up the page layout
+st.set_page_config(page_title="EcoSort AI", page_icon="♻️")
+
+# Title and Introduction
+st.title("♻️ EcoSort AI: Smart Waste Guide")
+st.write("**SDG 12: Responsible Consumption and Production**")
+st.write("Not sure where to throw something? Type your waste item below, and our AI logic will guide you!")
+
+# Sidebar for Responsible AI (Matches the Guidelines!)
+st.sidebar.header("Responsible AI Considerations")
+st.sidebar.info(
+    "**Fairness:** Accessible guidance regardless of local recycling capabilities.\n\n"
+    "**Privacy:** No user data or locations are stored.\n\n"
+    "**Transparency:** Clear explanations provided for disposal rules."
+)
+
+# Simulated AI Prompt Workflow Logic
+def simulate_ai_classification(item):
+    item = item.lower()
+    
+    # E-Waste
+    if any(word in item for word in ["battery", "laptop", "phone", "electronics", "wire", "charger"]):
+        return "E-Waste 🔋", "Do NOT throw in the regular bin! Take this to an electronics recycling center to prevent toxic chemical leaks.", "error"
+    
+    # Compost
+    elif any(word in item for word in ["apple", "food", "banana", "peel", "vegetable", "leaves", "pizza"]):
+        return "Compost 🌱", "Great! This is organic matter. Put it in your green compost bin so it can return to the earth.", "success"
+    
+    # Recycle
+    elif any(word in item for word in ["plastic", "paper", "cardboard", "bottle", "glass", "can"]):
+        return "Recycle ♻️", "Make sure it is clean and dry, then place it in your blue recycling bin.", "info"
+    
+    # Hazardous
+    elif any(word in item for word in ["paint", "chemical", "oil", "medicine", "bulb"]):
+        return "Hazardous ⚠️", "Danger! This requires special disposal. Check your local municipal guidelines for hazardous waste drop-off.", "warning"
+    
+    # Default Landfill
+    elif item != "":
+        return "Landfill 🗑️", "This item goes to the general waste bin. Try to find reusable alternatives in the future!", "warning"
+    
+    return None, None, None
+
+# User Input Box
+user_input = st.text_input("What do you need to dispose of? (e.g., 'plastic bottle', 'old laptop', 'banana peel')")
+
+# Button to trigger the 'AI'
+if st.button("Sort Waste"):
+    if user_input:
+        category, instruction, msg_type = simulate_ai_classification(user_input)
+        
+        # Display the results based on category
+        st.subheader(f"Category: {category}")
+        
+        if msg_type == "error":
+            st.error(instruction)
+        elif msg_type == "success":
+            st.success(instruction)
+        elif msg_type == "info":
+            st.info(instruction)
+        elif msg_type == "warning":
+            st.warning(instruction)
+    else:
+        st.write("Please type an item first!")
