@@ -68,112 +68,74 @@ export default function Slide5Demo() {
           Built and deployed on Replit — paste screenshots of the working prototype below
         </p>
 
-        {/* Two screenshot placeholders side by side */}
+        {/* Two screenshots side by side */}
         <div style={{ display: "flex", flex: 1, gap: "3vw" }}>
           <div
             style={{
               flex: 1,
-              border: "1px dashed rgba(90,138,90,0.4)",
-              backgroundColor: "rgba(90,138,90,0.04)",
+              border: "1px solid rgba(90,138,90,0.3)",
+              overflow: "hidden",
               display: "flex",
               flexDirection: "column",
-              alignItems: "center",
-              justifyContent: "center",
-              gap: "2vh",
             }}
           >
             <div
               style={{
-                width: "4vw",
-                height: "4vw",
-                border: "1px solid rgba(90,138,90,0.35)",
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-              }}
-            >
-              <svg width="2.5vw" height="2.5vw" viewBox="0 0 24 24" fill="none" stroke="#5A8A5A" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-                <rect x="3" y="3" width="18" height="18" rx="2" />
-                <circle cx="8.5" cy="8.5" r="1.5" />
-                <polyline points="21 15 16 10 5 21" />
-              </svg>
-            </div>
-            <div
-              style={{
                 fontFamily: "'DM Mono', monospace",
-                fontSize: "1.1vw",
+                fontSize: "0.9vw",
                 color: "#5A8A5A",
-                opacity: 0.7,
-                textAlign: "center",
+                padding: "1.2vh 1.5vw",
+                borderBottom: "1px solid rgba(90,138,90,0.2)",
+                backgroundColor: "rgba(90,138,90,0.06)",
               }}
             >
-              Screenshot — Input Screen
+              INPUT SCREEN
             </div>
-            <div
+            <img
+              src={`${import.meta.env.BASE_URL}demo-input.png`}
+              alt="EcoSort AI input screen"
               style={{
-                fontFamily: "'DM Sans', sans-serif",
-                fontSize: "1.2vw",
-                color: "#E0EBE0",
-                opacity: 0.35,
-                textAlign: "center",
-                maxWidth: "20vw",
+                width: "100%",
+                height: "100%",
+                objectFit: "cover",
+                objectPosition: "top",
+                flex: 1,
               }}
-            >
-              Paste a screenshot of the search input and example chips here
-            </div>
+            />
           </div>
 
           <div
             style={{
               flex: 1,
-              border: "1px dashed rgba(90,138,90,0.4)",
-              backgroundColor: "rgba(90,138,90,0.04)",
+              border: "1px solid rgba(90,138,90,0.3)",
+              overflow: "hidden",
               display: "flex",
               flexDirection: "column",
-              alignItems: "center",
-              justifyContent: "center",
-              gap: "2vh",
             }}
           >
             <div
               style={{
-                width: "4vw",
-                height: "4vw",
-                border: "1px solid rgba(90,138,90,0.35)",
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-              }}
-            >
-              <svg width="2.5vw" height="2.5vw" viewBox="0 0 24 24" fill="none" stroke="#5A8A5A" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-                <rect x="3" y="3" width="18" height="18" rx="2" />
-                <circle cx="8.5" cy="8.5" r="1.5" />
-                <polyline points="21 15 16 10 5 21" />
-              </svg>
-            </div>
-            <div
-              style={{
                 fontFamily: "'DM Mono', monospace",
-                fontSize: "1.1vw",
+                fontSize: "0.9vw",
                 color: "#5A8A5A",
-                opacity: 0.7,
-                textAlign: "center",
+                padding: "1.2vh 1.5vw",
+                borderBottom: "1px solid rgba(90,138,90,0.2)",
+                backgroundColor: "rgba(90,138,90,0.06)",
               }}
             >
-              Screenshot — Classification Result
+              CLASSIFICATION RESULT
             </div>
-            <div
+            <img
+              src={`${import.meta.env.BASE_URL}demo-result.png`}
+              alt="EcoSort AI classification result"
               style={{
-                fontFamily: "'DM Sans', sans-serif",
-                fontSize: "1.2vw",
-                color: "#E0EBE0",
-                opacity: 0.35,
-                textAlign: "center",
-                maxWidth: "20vw",
+                width: "100%",
+                height: "100%",
+                objectFit: "cover",
+                objectPosition: "top",
+                flex: 1,
               }}
-            >
-              Paste a screenshot showing a classification result with category and instructions
-            </div>
+            />
           </div>
         </div>
 

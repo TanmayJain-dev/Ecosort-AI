@@ -240,30 +240,26 @@ export default function Slide6Tools() {
               Used during the ideation phase to structure the project requirements and validate the responsible AI considerations.
             </div>
 
-            {/* Placeholder for IBM BOB screenshot */}
+            {/* IBM BOB screenshot */}
             <div
               style={{
                 flex: 1,
-                border: "1px dashed rgba(90,138,90,0.35)",
-                backgroundColor: "rgba(90,138,90,0.04)",
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
+                border: "1px solid rgba(90,138,90,0.3)",
+                overflow: "hidden",
                 marginTop: "1vh",
                 minHeight: "8vh",
               }}
             >
-              <div
+              <img
+                src={`${import.meta.env.BASE_URL}ibm-bob.png`}
+                alt="IBM BOB screenshot"
                 style={{
-                  fontFamily: "'DM Mono', monospace",
-                  fontSize: "1vw",
-                  color: "#5A8A5A",
-                  opacity: 0.5,
-                  textAlign: "center",
+                  width: "100%",
+                  height: "100%",
+                  objectFit: "cover",
+                  objectPosition: "top",
                 }}
-              >
-                [Paste IBM BOB screenshot here]
-              </div>
+              />
             </div>
           </div>
         </div>
