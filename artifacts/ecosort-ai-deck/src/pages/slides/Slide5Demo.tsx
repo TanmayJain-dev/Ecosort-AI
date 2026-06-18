@@ -56,17 +56,27 @@ export default function Slide5Demo() {
         >
           Live Web App
         </h2>
-        <p
+        <a
+          href="https://asset-manager--jainptanmay.replit.app"
+          target="_blank"
+          rel="noopener noreferrer"
           style={{
-            fontFamily: "'DM Sans', sans-serif",
-            fontSize: "1.4vw",
-            color: "#E0EBE0",
-            opacity: 0.55,
+            display: "inline-flex",
+            alignItems: "center",
+            gap: "0.6vw",
+            fontFamily: "'DM Mono', monospace",
+            fontSize: "1.2vw",
+            color: "#5A8A5A",
+            textDecoration: "none",
             margin: "0 0 4vh 0",
+            borderBottom: "1px solid rgba(90,138,90,0.45)",
+            paddingBottom: "0.3vh",
+            width: "fit-content",
           }}
         >
-          Built and deployed on Replit — paste screenshots of the working prototype below
-        </p>
+          <span>🔗</span>
+          <span>Try the Live App</span>
+        </a>
 
         {/* Two screenshots side by side */}
         <div style={{ display: "flex", flex: 1, gap: "3vw" }}>
