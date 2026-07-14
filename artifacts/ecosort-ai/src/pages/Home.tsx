@@ -22,8 +22,10 @@ const EXAMPLE_CHIPS = [
   "Cardboard box",
 ];
 
+const API_BASE = import.meta.env.VITE_API_URL ?? "";
+
 async function classifyWithAI(item: string): Promise<WasteCategory> {
-  const res = await fetch("/api/classify", {
+  const res = await fetch(`${API_BASE}/api/classify`, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({ item }),

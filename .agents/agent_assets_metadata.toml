@@ -1,8 +1,19 @@
 uploads = []
-outputs = []
 
 [[generated]]
 id = "lhYyAYPqMeMV2Y8sb0aZl"
 uri = "file://artifacts/ecosort-ai-deck/public/geodesic-bg.png"
 type = "image"
 title = "generated_image"
+
+[[outputs]]
+id = "662M4Uysced94hAFZ0PDn"
+uri = "file://.local/outputs/Asset-Manager.pdf"
+type = "pdf"
+title = "Asset Manager.pdf"
+
+[[outputs]]
+id = "i9a4fMmje2P4NRPR-VAMa"
+uri = "file://.local/outputs/Asset-Manager.pptx"
+type = "slides"
+title = "Asset Manager.pptx"
