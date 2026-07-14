@@ -1,45 +1,56 @@
-# [Project name]
+# EcoSort AI
 
-_Replace the heading above with the project's name, and this line with one sentence describing what this app does for users._
+A real-time, LLM-powered web app that classifies any waste item and returns specific, actionable disposal instructions — powered by the Gemini API. Built for the IBM SkillsBuild AI Internship (SDG 12: Responsible Consumption).
 
 ## Run & Operate
 
-- `pnpm --filter @workspace/api-server run dev` — run the API server (port 5000)
-- `pnpm run typecheck` — full typecheck across all packages
-- `pnpm run build` — typecheck + build all packages
-- `pnpm --filter @workspace/api-spec run codegen` — regenerate API hooks and Zod schemas from the OpenAPI spec
-- `pnpm --filter @workspace/db run push` — push DB schema changes (dev only)
-- Required env: `DATABASE_URL` — Postgres connection string
+- `pnpm --filter @workspace/api-server run dev` — run the API server
+- `pnpm --filter @workspace/ecosort-ai run dev` — run the frontend (requires PORT + BASE_PATH)
+- `pnpm run typecheck` — typecheck all packages
 
 ## Stack
 
-- pnpm workspaces, Node.js 24, TypeScript 5.9
-- API: Express 5
-- DB: PostgreSQL + Drizzle ORM
-- Validation: Zod (`zod/v4`), `drizzle-zod`
-- API codegen: Orval (from OpenAPI spec)
-- Build: esbuild (CJS bundle)
+- **Monorepo**: pnpm workspaces, Node.js 24, TypeScript 5.9
+- **Frontend**: React 19 + Vite 7, Tailwind CSS v4, Framer Motion, Wouter
+- **API**: Express 5 + pino logger
+- **AI**: Google Gemini API (`gemini-2.5-flash`) via `@google/generative-ai`
+- **Build**: esbuild (API), Vite (frontend)
 
 ## Where things live
 
-_Populate as you build — short repo map plus pointers to the source-of-truth file for DB schema, API contracts, theme files, etc._
+```
+artifacts/
+  api-server/       Express API — POST /api/classify calls Gemini
+  ecosort-ai/       React frontend — src/pages/Home.tsx is the main UI
+lib/
+  api-spec/         OpenAPI spec (source of truth for API contract)
+  api-zod/          Generated Zod schemas from the spec
+render.yaml         Render deployment blueprint (both services)
+artifacts/ecosort-ai/vercel.json  Vercel deployment config (frontend only)
+```
+
+## Environment Variables
+
+| Variable | Where | Description |
+|---|---|---|
+| `GEMINI_API_KEY` | API server | Your Google Gemini API key |
+| `PORT` | Both | Port to listen on (injected by host) |
+| `BASE_PATH` | Frontend (Replit only) | URL prefix, e.g. `/` |
+| `VITE_API_URL` | Frontend (external hosting) | Full URL of the API server, e.g. `https://ecosort-api.onrender.com` |
+
+## Deploying externally
+
+**Render** — connect your repo and select `render.yaml`. Two services are created automatically. Set `GEMINI_API_KEY` on the API service, then set `VITE_API_URL` on the frontend service to the API's URL and redeploy.
+
+**Vercel** (frontend only) — import the repo, set root to `artifacts/ecosort-ai`, set `VITE_API_URL` to your hosted API URL.
 
 ## Architecture decisions
 
-_Populate as you build — non-obvious choices a reader couldn't infer from the code (3-5 bullets)._
-
-## Product
-
-_Describe the high-level user-facing capabilities of this app once they exist._
+- Gemini API called server-side (API key never exposed to the browser)
+- Frontend falls back to local keyword-matching (`src/lib/classify.ts`) if the API call fails
+- No database — the classify endpoint is fully stateless
+- `BASE_PATH` / `PORT` are optional at build time so the same Vite config works on Replit and Render/Vercel
 
 ## User preferences
 
 _Populate as you build — explicit user instructions worth remembering across sessions._
-
-## Gotchas
-
-_Populate as you build — sharp edges, "always run X before Y" rules._
-
-## Pointers
-
-- See the `pnpm-workspace` skill for workspace structure, TypeScript setup, and package details
