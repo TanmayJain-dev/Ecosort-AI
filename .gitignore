@@ -47,3 +47,7 @@ Thumbs.db
 # Replit
 .cache/
 .local/
+# Environment Variables (CRITICAL)
+.env
+.env.local
+.env.*
