@@ -32,7 +32,7 @@ router.post("/classify", async (req, res) => {
 
   try {
     const model = genAI.getGenerativeModel({
-      model: "gemini-3.5-flash",
+      model: "gemini-3.1-flash-lite",
       systemInstruction: SYSTEM_PROMPT,
     });
 
